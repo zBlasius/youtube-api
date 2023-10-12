@@ -7,7 +7,7 @@
    */
 
   function loadClient() {
-    gapi.client.setApiKey("AIzaSyBMmn56yDotiONwvbMe14unTMoIxhp1gPM");
+    gapi.client.setApiKey("AIzaSyBMmn56yDotiONwvbMe14unTMoIxhp1gPM"); // como pegar esse token de api automático ?
     return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
         .then(function() { console.log("GAPI client loaded for API"); },
               function(err) { console.error("Error loading GAPI client for API", err); });
@@ -17,7 +17,7 @@
     return gapi.client.youtube.commentThreads.list({
       "part": 
         "snippet", // snippet, id
-      "videoId": "SIm2W9TtzR0"
+      "videoId": "SIm2W9TtzR0" // id do vídeo, podemos pegar na url do próprio vídeo
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
