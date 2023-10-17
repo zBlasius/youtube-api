@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <Context.Provider value={{ state, setState }}>
+      <Context.Provider value={{ state, setState}}>
         <MainScreen />
       </Context.Provider>
     </div>
