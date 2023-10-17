@@ -8,7 +8,7 @@ export default function CommentList(){
     return (
         <div>
             {state.listComments.map((item, index)=>(
-                <p key={index}> {item.comment} </p>
+                <p key={index}> {index} - {item.comment} </p>
             ))}
         </div>
     )
