@@ -17,7 +17,7 @@ export default function MainScreen() {
     function getListCommentsAtYoutubeApi(videoId: string) {
         axios.get(`https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=${videoId}&key=${apiKey}`)
             .then(ret => {
-                let newState: { author: any; comment: any; }[] = [];
+                let newState: { author: string, comment: string }[] = [];
                 let list = ret.data.items;
                 list.forEach((item: any) => {
                     newState.push({author:item.snippet.topLevelComment.snippet.authorDisplayName ,comment:item.snippet.topLevelComment.snippet.textDisplay})
